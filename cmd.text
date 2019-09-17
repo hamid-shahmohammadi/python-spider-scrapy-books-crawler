@@ -1,3 +1,4 @@
 scrapy crawl books -o items.csv
+scrapy crawl books -a category=""
 
-git checkout -b lesson-29
+git checkout -b lesson-30
