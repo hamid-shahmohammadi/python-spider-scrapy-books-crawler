@@ -17,10 +17,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books_crawler/spiders/books.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="192">
+              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
               <folding>
-                <element signature="e#25#50#0" expanded="true" />
+                <element signature="e#24#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmd.text">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="33" />
+            <state relative-caret-position="30">
+              <caret line="2" column="118" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="118" />
             </state>
           </provider>
         </entry>
@@ -73,6 +73,12 @@
               <item name="books_crawler" type="462c0819:PsiDirectoryNode" />
               <item name="books_crawler" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="books_crawler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="books_crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="books_crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -111,7 +117,7 @@
     <frame x="67" y="25" width="1095" height="591" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19496268" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19496268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -122,7 +128,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.41558442" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.24675325" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -140,18 +146,18 @@
     <entry file="file://$PROJECT_DIR$/items.csv" />
     <entry file="file://$PROJECT_DIR$/books_crawler/spiders/books.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="192">
+          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
           <folding>
-            <element signature="e#25#50#0" expanded="true" />
+            <element signature="e#24#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd.text">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="30">
+          <caret line="2" column="118" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="118" />
         </state>
       </provider>
     </entry>

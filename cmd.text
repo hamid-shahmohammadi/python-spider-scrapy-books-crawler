@@ -1,4 +1,5 @@
 scrapy crawl books -o items.csv
 scrapy crawl books -a category=""
+scrapy crawl books -a category="http://books.toscrape.com/catalogue/category/books/history_32/index.html" -o items.csv
 
-git checkout -b lesson-30
+git checkout -b lesson-31
