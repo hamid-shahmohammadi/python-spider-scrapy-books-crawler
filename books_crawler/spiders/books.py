@@ -32,7 +32,7 @@ class BooksSpider(Spider):
         image_urls=image_urls.replace('../..','http://books.toscrape.com/')
 
         l.add_value('title',title)
-        l.add_value('title',title)
+        l.add_value('price',price)
         l.add_value('image_urls',image_urls)
 
         return l.load_item()
