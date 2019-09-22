@@ -4,4 +4,27 @@ scrapy crawl books -a category="http://books.toscrape.com/catalogue/category/boo
 
 scrapy crawl books
 
-git checkout -b lesson-34
+git checkout -b lesson-44
+
+
+sudo apt-get install mysql-server
+
+
+mysql -u root -p
+
+sudo mysql --defaults-file=/etc/mysql/debian.cnf
+sudo cat /etc/mysql/debian.cnf
+SHOW DATABASES;
+
+USE mysql;
+update user set authentication_string=PASSWORD("123456") where User="root";
+UPDATE user SET plugin="mysql_native_password" WHERE User='root';
+FLUSH PRIVILEGES;
+QUIT;
+
+sudo apt install default-libmysqlclient-dev
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install python-mysqldb
+
+scrapy crawl books -o items.csv
+

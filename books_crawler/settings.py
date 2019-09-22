@@ -64,10 +64,10 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-    'scrapy.pipelines.images.ImagesPipeline': 300,
-}
-IMAGES_STORE='/home/djangoadmin/Desktop/foobar'
+# ITEM_PIPELINES = {
+#     'scrapy.pipelines.images.ImagesPipeline': 300,
+# }
+# IMAGES_STORE='/home/djangoadmin/Desktop/foobar'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

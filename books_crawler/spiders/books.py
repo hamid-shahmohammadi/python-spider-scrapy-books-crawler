@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 import os
+import csv
 import glob
+import MySQLdb
 from scrapy import Spider
 from scrapy.http import Request
-from scrapy.loader import ItemLoader
-from books_crawler.items import BooksCrawlerItem
+
+
+def product_inf(response,value):
+    return response.xpath('//th[text()="' + value + '"]/following-sibling::td/text()').extract_first()
 
 
 class BooksSpider(Spider):
@@ -19,20 +23,40 @@ class BooksSpider(Spider):
             absolute_url=response.urljoin(book)
             yield Request(absolute_url,callback=self.parse_book)
 
-        next_page_url = response.xpath('//a[text()="next"]/@href').extract_first()
-        absolute_next_page_url = response.urljoin(next_page_url)
-        yield Request(absolute_next_page_url)
+        # next_page_url = response.xpath('//a[text()="next"]/@href').extract_first()
+        # absolute_next_page_url = response.urljoin(next_page_url)
+        # yield Request(absolute_next_page_url)
 
 
     def parse_book(self,response):
-        l = ItemLoader(item=BooksCrawlerItem() , response=response)
         title = response.css('h1::text').extract_first()
-        price=response.xpath('//*[@class="price_color"]/text()').extract_first()
-        image_urls=response.xpath('//img/@src').extract_first()
-        image_urls=image_urls.replace('../..','http://books.toscrape.com/')
+        rating = response.xpath('//*[contains(@class,"star-rating")]/@class').extract_first()
+        rating = rating.replace('star-rating ', '')
+        UPC = product_inf(response, 'UPC')
+        product_type = product_inf(response, 'Product Type')
 
-        l.add_value('title',title)
-        l.add_value('price',price)
-        l.add_value('image_urls',image_urls)
+        yield {
+            'rating': rating,
+            'product_type': product_type,
+            'UPC': UPC,
+            'title': title,
+        }
 
-        return l.load_item()
+    def close(self, reason):
+        csv_file = max(glob.iglob('*.csv'), key=os.path.getctime)
+        mydb=MySQLdb.connect(host='localhost',user='root',passwd='123456',db='books_db')
+
+        cursor=mydb.cursor()
+
+        csv_data=csv.reader(file(csv_file))
+
+        row_count = 0
+        for row in csv_data:
+            print row
+            #if row_count != 0:
+            cursor.execute('INSERT IGNORE INTO books_table(rating, product_type, upc, title) VALUES(%s, %s, %s, %s)', row)
+            row_count += 1
+
+        mydb.commit()
+        cursor.close()
+
