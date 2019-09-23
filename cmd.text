@@ -4,7 +4,7 @@ scrapy crawl books -a category="http://books.toscrape.com/catalogue/category/boo
 
 scrapy crawl books
 
-git checkout -b lesson-44
+git checkout -b lesson-47
 
 
 sudo apt-get install mysql-server
@@ -27,4 +27,29 @@ sudo apt-get install libmysqlclient-dev
 sudo apt-get install python-mysqldb
 
 scrapy crawl books -o items.csv
+
+
+shsudo apt update
+show dbs
+sudo apt install -y mongodb
+sudo systemctl status mongodb
+sudo systemctl start mongodb
+sudo systemctl enable mongodb
+sudo systemctl disable mongodb
+use school_db
+db.createUser({user:"principal",pwd:"123",roles:["readWrite","dbAdmin"]});
+db.createCollection('students');
+show collections
+db.students.insert({name:"Mike",age:23,grade:"A"});
+db.students.find();
+db.students.find().pretty();
+db.dropDatabase()
+
+sudo pip install pymongo
+
+show dbs
+use books
+show collections
+db.products.find().pretty();
+
 

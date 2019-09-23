@@ -6,6 +6,20 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class BooksCrawlerPipeline(object):
+from pymongo import MongoClient
+# from scrapy.conf import settings
+from scrapy.utils.project import get_project_settings
+
+class MongoDBPipeline(object):
+
+    def __init__(self):
+        settings = get_project_settings()
+        connection = MongoClient(
+            settings['MONGODB_SERVER'],
+            settings['MONGODB_PORT'])
+        db = connection[settings['MONGODB_DB']]
+        self.collection = db[settings['MONGODB_COLLECTION']]
+
     def process_item(self, item, spider):
+        self.collection.insert(dict(item))
         return item
